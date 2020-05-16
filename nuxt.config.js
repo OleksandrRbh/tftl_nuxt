@@ -1,3 +1,8 @@
+const routerBase = process.env.DEPLOY_ENV === 'GH_PAGES' ? {
+  router: {
+    base: '/tftl_nuxt/'
+  }
+} : {}
 
 export default {
   mode: 'spa',
@@ -46,6 +51,8 @@ export default {
   /*
   ** Build configuration
   */
+ ...routerBase,
+
   build: {
     /*
     ** You can extend webpack config here
